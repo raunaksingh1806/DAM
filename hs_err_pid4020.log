@@ -1,0 +1,196 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x77b4ee1d, pid=4020, tid=0x00000240
+#
+# JRE version:  (8.0_191-b12) (build )
+# Java VM: Java HotSpot(TM) Client VM (25.191-b12 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  0x77b4ee1d
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0118cc00):  JavaThread "main" [_thread_in_Java, id=576, stack(0x01710000,0x01760000)]
+
+siginfo: ExceptionCode=0xc0000005, ExceptionInformation=0x00000008 0x77b4ee1d
+
+Registers:
+EAX=0x03c07748, EBX=0x00000059, ECX=0x00000000, EDX=0x00000000
+ESP=0x0175f990, EBP=0x0175f9b0, ESI=0x13c24b63, EDI=0x0175f9bc
+EIP=0x77b4ee1d, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x0175f990)
+0x0175f990:   0175f990 13c24b60 0175f9bc 14848538
+0x0175f9a0:   00000000 148119b8 00000000 0175f9c0
+0x0175f9b0:   0175f9dc 01b40697 03c073c0 03c05ac8
+0x0175f9c0:   0175f9e8 5f2fbde2 0118cc00 00001f80
+0x0175f9d0:   0175fafc 0118cc00 01b40632 0175fa64
+0x0175f9e0:   5f2fc315 0175fa10 0175fafc 0000000a
+0x0175f9f0:   148119b8 01b4b310 0175fb10 00000000
+0x0175fa00:   0118cc00 0118cc00 011cdb98 148119b8 
+
+Instructions: (pc=0x77b4ee1d)
+0x77b4edfd:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xc0000005]
+
+Register to memory mapping:
+
+EAX=0x03c07748 is an oop
+java.lang.ref.Reference$1 
+ - klass: 'java/lang/ref/Reference$1'
+EBX=0x00000059 is an unknown value
+ECX=0x00000000 is an unknown value
+EDX=0x00000000 is an unknown value
+ESP=0x0175f990 is pointing into the stack for thread: 0x0118cc00
+EBP=0x0175f9b0 is pointing into the stack for thread: 0x0118cc00
+ESI=0x13c24b63 is pointing into metadata
+EDI=0x0175f9bc is pointing into the stack for thread: 0x0118cc00
+
+
+Stack: [0x01710000,0x01760000],  sp=0x0175f990,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x77b4ee1d
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x15c315]
+V  [jvm.dll+0x223ece]
+V  [jvm.dll+0x15c3ae]
+V  [jvm.dll+0xc178a]
+V  [jvm.dll+0xc248a]
+V  [jvm.dll+0xc25d8]
+V  [jvm.dll+0xc23b5]
+V  [jvm.dll+0xc25d8]
+V  [jvm.dll+0xc23b5]
+V  [jvm.dll+0xc25d8]
+V  [jvm.dll+0x17a45c]
+V  [jvm.dll+0xe8061]
+C  [jli.dll+0x351a]
+C  [jli.dll+0x408f]
+C  [jli.dll+0xac1f]
+C  [jli.dll+0xaca9]
+C  [kernel32.dll+0x51174]
+C  [ntdll.dll+0x5b3f5]
+C  [ntdll.dll+0x5b3c8]
+C  0x00000000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x011f3000 JavaThread "Reference Handler" daemon [_thread_blocked, id=2636, stack(0x14790000,0x147e0000)]
+=>0x0118cc00 JavaThread "main" [_thread_in_Java, id=576, stack(0x01710000,0x01760000)]
+
+Other Threads:
+  0x011f0c00 VMThread [stack: 0x14740000,0x14790000] [id=2320]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 2432K, used 43K [0x03c00000, 0x03ea0000, 0x09150000)
+  eden space 2176K,   2% used [0x03c00000, 0x03c0ae28, 0x03e20000)
+  from space 256K,   0% used [0x03e20000, 0x03e20000, 0x03e60000)
+  to   space 256K,   0% used [0x03e60000, 0x03e60000, 0x03ea0000)
+ tenured generation   total 5504K, used 0K [0x09150000, 0x096b0000, 0x13c00000)
+   the space 5504K,   0% used [0x09150000, 0x09150000, 0x09150200, 0x096b0000)
+ Metaspace       used 7K, capacity 2240K, committed 2240K, reserved 4480K
+
+Card table byte_map: [0x012b0000,0x01340000] byte_map_base: 0x01292000
+
+Polling page: 0x010a0000
+
+CodeCache: size=32768Kb used=334Kb max_used=334Kb free=32433Kb
+ bounds [0x01b40000, 0x01b98000, 0x03b40000]
+ total_blobs=68 nmethods=0 adapters=45
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (6 events):
+Event: 0.029 Thread 0x0118cc00 Thread added: 0x0118cc00
+Event: 0.031 Thread 0x011f3000 Thread added: 0x011f3000
+Event: 0.031 loading class java/lang/ref/Reference$1
+Event: 0.035 loading class sun/misc/JavaLangRefAccess
+Event: 0.036 loading class sun/misc/JavaLangRefAccess done
+Event: 0.036 loading class java/lang/ref/Reference$1 done
+
+
+Dynamic libraries:
+0x01370000 - 0x01376000 	C:\Program Files\Java\jdk1.8.0_191\bin\javac.exe
+0x77bf0000 - 0x77d2c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x6c970000 - 0x6c99f000 	C:\Program Files\AVAST Software\Avast\aswhookx.dll
+0x76190000 - 0x76264000 	C:\Windows\system32\kernel32.dll
+0x75e10000 - 0x75e5a000 	C:\Windows\system32\KERNELBASE.dll
+0x6f6a0000 - 0x6f6cb000 	C:\Program Files\Java\jdk1.8.0_191\bin\jli.dll
+0x76340000 - 0x763e0000 	C:\Windows\system32\ADVAPI32.dll
+0x765d0000 - 0x7667c000 	C:\Windows\system32\msvcrt.dll
+0x76170000 - 0x76189000 	C:\Windows\SYSTEM32\sechost.dll
+0x76040000 - 0x760e1000 	C:\Windows\system32\RPCRT4.dll
+0x74da0000 - 0x74f3e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16385_none_421189da2b7fabfc\COMCTL32.dll
+0x77660000 - 0x776ae000 	C:\Windows\system32\GDI32.dll
+0x77d50000 - 0x77e19000 	C:\Windows\system32\USER32.dll
+0x76730000 - 0x7673a000 	C:\Windows\system32\LPK.dll
+0x76690000 - 0x7672d000 	C:\Windows\system32\USP10.dll
+0x763e0000 - 0x76437000 	C:\Windows\system32\SHLWAPI.dll
+0x6f310000 - 0x6f3cf000 	C:\Program Files\Java\jdk1.8.0_191\bin\MSVCR100.dll
+0x77d30000 - 0x77d4f000 	C:\Windows\system32\IMM32.DLL
+0x76270000 - 0x7633c000 	C:\Windows\system32\MSCTF.dll
+0x5edb0000 - 0x5ee6f000 	C:\Program Files\Java\jdk1.8.0_191\jre\bin\msvcr100.dll
+0x5f1a0000 - 0x5f573000 	C:\Program Files\Java\jdk1.8.0_191\jre\bin\client\jvm.dll
+0x73690000 - 0x73697000 	C:\Windows\system32\WSOCK32.dll
+0x76490000 - 0x764c5000 	C:\Windows\system32\WS2_32.dll
+0x76680000 - 0x76686000 	C:\Windows\system32\NSI.dll
+0x741b0000 - 0x741e2000 	C:\Windows\system32\WINMM.dll
+0x75200000 - 0x75209000 	C:\Windows\system32\VERSION.dll
+0x776b0000 - 0x776b5000 	C:\Windows\system32\PSAPI.DLL
+0x74530000 - 0x7453c000 	C:\Program Files\Java\jdk1.8.0_191\jre\bin\verify.dll
+0x6f860000 - 0x6f882000 	C:\Program Files\Java\jdk1.8.0_191\jre\bin\java.dll
+0x6f720000 - 0x6f734000 	C:\Program Files\Java\jdk1.8.0_191\jre\bin\zip.dll
+0x71da0000 - 0x71e8b000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dapplication.home=C:\Program Files\Java\jdk1.8.0_191 -Xms8m 
+java_command: com.sun.tools.javac.Main -d C:\Users\Administrator\Documents\NetBeansProjects\MAIN\build\classes -classpath C:\Users\Administrator\Documents\NetBeansProjects\MAIN\build\classes;C:\Program Files\NetBeans 8.2\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar -sourcepath C:\Users\Administrator\Documents\NetBeansProjects\MAIN\src -target 1.8 -encoding UTF-8 -g -processorpath C:\Program Files\NetBeans 8.2\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar;C:\Users\Administrator\Documents\NetBeansProjects\MAIN\build\empty -s C:\Users\Administrator\Documents\NetBeansProjects\MAIN\build\generated-sources\ap-source-output -source 1.8 C:\Users\Administrator\Documents\NetBeansProjects\MAIN\src\Dframes\Location.java
+java_class_path (initial): C:\Program Files\Java\jdk1.8.0_191/lib/tools.jar;C:\Program Files\Java\jdk1.8.0_191/classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MySQL\MySQL Server 5.1\bin;C:\Program Files\AMD\ATI.ACE\Core-Static
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 37 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 (6.1.7600.16385)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 3331400k(1941192k free), swap 6661036k(5207060k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.191-b12) for windows-x86 JRE (1.8.0_191-b12), built on Oct  6 2018 08:34:23 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Oct 31 13:17:20 2018
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
